@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset id="question1">
+        <legend>1. Which are fruit?</legend>
+        <label><INPUT TYPE="checkbox" NAME="input" VALUE="wrong">tomatoes<BR></label>
+        <label><INPUT TYPE="checkbox" NAME="input" VALUE="wrong">cucumber<BR></label>
+        <label><INPUT TYPE="checkbox" NAME="input" VALUE="right">apples<BR></label>
+        <label><INPUT TYPE="checkbox" NAME="input" VALUE="wrong">onion<BR></label>
+        <label><INPUT TYPE="checkbox" NAME="input" VALUE="right">bananas<BR></label>
+    </fieldset>
+    <input type="button" id="answer" value="Submit">
+    <div class="result">
+
+    </div>
+    <script>
+        
+        document.getElementById("answer").onclick = validate;
+
+        function validate() {
+            let score = 0;
+            var checkboxes = document.getElementsByName("input");
+            var checkboxChecked = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked && (checkboxes[i].value === "right")) {
+                    checkboxChecked.push(checkboxes[i]);
+                }
+            }
+
+            if (checkboxChecked.length === 2) {
+                score++;  
+                  }
+                  const resultsContainer = document.getElementById('results');
+                  resultsContainer.innerHTML = ` Score:  ${score} `; 
+        }
+       
+    </script>
+</body>
+
+</html>

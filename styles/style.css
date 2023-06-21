@@ -1,0 +1,138 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0px;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: hwb(322 3% 61%);
+}
+
+.nav-group {
+  max-height: 40px;
+  background-color: hwb(322 3% 61%);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  display: flex;
+  position: relative; 
+}
+.nav-group li{
+  flex: 0 0 auto;
+  /* padding: 10px 20px; */
+
+}
+.tab {
+  border: none;
+  background-color: hwb(322 3% 61%);
+  padding: 0px 35px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.tab:hover {
+  background-color: rgb(167, 62, 144);
+}
+
+.tab.active {
+  background-color: rgb(74, 8, 181);
+}
+
+.tabcontent {
+  display: flex;
+  width: 100%;
+  height: 95vh;
+  display: none;
+  /* position: absolute;
+    top: 40px;
+    left: 0 */
+}
+
+.left {
+  position: relative;
+  top: 40px;
+  width: 350px;
+  background-color: rgb(235, 192, 136);
+  overflow: scroll;
+}
+
+.left-navgroup {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.tabv {
+  border: none;
+  background-color: rgb(235, 192, 136);
+  padding: 10px 0px;
+  width: 100%;
+  position: relative;
+}
+
+.tabv:hover {
+  background-color: blueviolet;
+  color: #fff;
+}
+
+.tabv.active {
+  background-color: brown;
+  color: #fff;
+} 
+.right {
+  position: relative;
+  top: 40px;
+  width: 100%;
+  height: 95vh;
+  overflow: scroll;
+  background-color: rgb(245, 243, 241);
+  padding-bottom: 70px;
+}
+
+iframe {
+  width: 100%;
+  height: 95vh;
+  overflow: scroll;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.show {
+  display: block;
+  overflow-y: scroll;
+}
+.active{
+  display: block;
+}
+/* sliding tabs css */
+.prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color: blue;
+    border-radius: 50px;
+    z-index: 1;
+  }
+
+  .prev-button {
+    /* left: 10px; */
+  }
+
+  .next-button {
+    right: 10px;
+  }

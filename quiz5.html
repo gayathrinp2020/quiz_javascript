@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+   margin: 0 auto;
+  padding: 40px;
+  text-align: left;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+p {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+button {
+  margin-top: 2em;
+  font-size: 1.2em;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quiz</h1>
+      <p>Test your knowledge with this quiz.</p>
+      <div id="quiz"></div>
+      <button id="submit">Submit Answers</button>
+      <div id="results"></div>
+    </div>
+    <script>
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+
+const myQuestions = [
+  {
+    question: "The collection of unprocessed facts, figures and symbols is known as ____________ ?",
+    answers: {
+      a: "Information",
+      b: "Software",
+      c: "Data and Information",
+      d: "None of the above"
+    },
+    correctAnswer: "d"
+  },
+  {
+    question: "Which disk is made up of a circular thin plastic jacket coated with magnetic material ?",
+    answers: {
+      a: "Hard Disk",
+      b: "Compact Disk",
+      c: "DVD",
+      d: "Floppy Disk"
+    },
+    correctAnswer: "d"
+  },
+  {
+    question: "Random Access Memory and Read Only Memory are examples of _______________ ?",
+    answers: {
+      a: "Primary Memory",
+      b: "Secondary memory",
+      c: "Blue-Ray",
+      d: "None of these"
+    },
+    correctAnswer: "a"
+  },
+];
+
+function buildQuiz() {
+  const output = [];
+
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    const answers = [];
+
+    for (const letter in currentQuestion.answers) {
+      answers.push(
+        `<label>
+           <input type="radio" name="question${questionNumber}" value="${letter}">
+           ${letter} :
+           ${currentQuestion.answers[letter]}
+         </label>
+         <br>`
+      );
+    }
+
+    output.push(
+      `<div class="question"> ${currentQuestion.question} </div>
+       <div class="answers"> ${answers.join('')} </div>`
+    );
+  });
+  
+
+  quizContainer.innerHTML = output.join('');
+}
+
+function showResults() {
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+
+  let numCorrect = 0;
+
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === currentQuestion.correctAnswer) {
+      numCorrect++;
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    } else {
+      answerContainers[questionNumber].style.color = 'red';
+    }
+  });
+   
+  resultsContainer.innerHTML = `<h3> SCORE: ${numCorrect} out of ${myQuestions.length}</h3>`;
+}
+
+buildQuiz();
+
+submitButton.addEventListener('click', showResults);
+    </script>
+  </body>
+</html>

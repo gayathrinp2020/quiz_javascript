@@ -1,0 +1,271 @@
+<!--This is a piece of HTML code that contains a navigation menu and a section with several buttons for quizzes related to a different topic.
+The navigation menu has a list of 15 topics, each represented by a button that has an ID of the form "tab-button-i" where "i" is the number of the topic. 
+When a user clicks on one of these buttons, a corresponding section with the ID "tab-i" will be displayed.
+The section with ID "tab-1" represents the first topic "Python" and has a list of buttons for quizzes related to this topic. Each quiz button has an ID of 
+the form "tabv-j" where "j" is the number of the quiz. When a user clicks on one of these buttons, a corresponding quiz page with the ID "quizj.html" will be loaded.
+The HTML code also contains some JavaScript functions, such as "hideMenu()", "showMenu()", "tabContent(event, id)", and "QuizContent(event, id, qid, quizfile)", 
+which are triggered when the user interacts with the navigation menu or the quiz buttons.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Navidation Menu -->
+    <nav id="navigation" class="navigation">
+        <div class="tab-container" style="position: relative; width: 100%; overflow: hidden;">
+            <ul class="nav-group" style=" display: flex; transition: transform 0.3s ease-in-out;">
+                <li><button id="tab-button-1" class="tab" onclick="tabContent(event,'1')">Python</button></li>
+                <li><button id="tab-button-2" class="tab" onclick="tabContent(event,'2')">Java Sripts</button></li>
+                <li><button id="tab-button-3" class="tab" onclick="tabContent(event,'3')">Topic3</button></li>
+                <li><button id="tab-button-4" class="tab" onclick="tabContent(event,'4')">Topic4</button></li>
+                <li><button id="tab-button-5" class="tab" onclick="tabContent(event,'5')">Topic5</button></li>
+                <li><button id="tab-button-6" class="tab">Topic5</button></li>
+                <li><button class="tab">Topic6</button></li>
+                <li><button class="tab">Topic7</button></li>
+                <li><button class="tab">Topic8</button></li>
+                <li><button class="tab">Topic9</button></li>
+                <li><button class="tab">Topic10</button></li>
+                <li><button class="tab">Topic11</button></li>
+                <li><button class="tab">Topic12</button></li>
+                <li><button class="tab">Topic13</button></li>
+                <li><button class="tab">Topic14</button></li>
+                <li><button class="tab">Topic15</button></li>
+                <li><button class="tab">Topic16</button></li>
+                <li><button class="tab">Topic17</button></li>
+
+            </ul>
+            <button class="prev-button">&lt;</button>
+            <button class="next-button">&gt;</button>
+        </div>
+    </nav>
+    <!-- Tab Contents (1)-->
+    <section id="tab-1" class="tabcontent">
+        <div class="left">
+            <ul class="left-navgroup">
+                <li><button id="tabv-1" class="tabv" onclick="QuizContent(event,'1','1','quiz1.html')">Quiz1
+                        Basics</button>
+                </li>
+                <li><button id="tabv-2" class="tabv" onclick="QuizContent(event,'1','2','quiz2.html')">Quiz 2 Variable
+                        Names</button>
+                </li>
+                <li><button id="tabv-3" class="tabv" onclick="QuizContent(event,'1','3','quiz3.html')">Quiz 3 Data
+                        Types</button>
+                </li>
+                <li><button id="tabv-4" class="tabv" onclick="QuizContent(event,'1','4','quiz1.html')">Quiz 4</button>
+                </li>
+                <li><button id="tabv-5" class="tabv" onclick="QuizContent(event,'1','5','')">Quiz 5</button>
+                </li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+                <li><button class="tabv">Quiz1</button></li>
+
+            </ul>
+        </div>
+        <div id="right-1" class="right">
+            <div id="description-1">
+                <h2>Python</h2>
+                <p>
+                    Python is a high-level, interpreted programming language that is widely used for general-purpose
+                    programming, web development, data analysis, machine learning, and more. It was first released in
+                    1991 by Guido van Rossum and has since become one of the most popular programming languages in the
+                    world.
+
+                    Here are some key features and concepts of Python:
+                <ul>
+                    <li>Simple and easy to learn: Python has a simple syntax and is easy to read and write, making it a
+                        great language for beginners.</li>
+
+                    <li>Dynamic typing: Python is dynamically typed, which means you don't need to specify the data type
+                        of a variable when you declare it.</li>
+
+                    <li>Object-oriented: Python is an object-oriented language, which means it supports object-oriented
+                        programming concepts like encapsulation, inheritance, and polymorphism.</li>
+
+                    <li>Interpreted: Python code is interpreted, which means it doesn't need to be compiled before it
+                        can be executed. This makes it easy to test and debug your code.</li>
+
+                    <li>Indentation-based syntax: Python uses whitespace indentation to delimit code blocks, rather than
+                        curly braces or other symbols. This can make the code more readable, but it also means you need
+                        to be careful with your indentation.</li>
+
+                    <li>Large standard library: Python comes with a large standard library that provides a wide range of
+                        built-in functions and modules for common tasks like file I/O, networking, and web development.
+                    </li>
+
+                    <li>Third-party packages: In addition to the standard library, Python has a huge ecosystem of
+                        third-party packages and modules that can be easily installed and used to extend the language's
+                        capabilities.</li>
+
+                    <li>Python is used in many fields such as Data Science, Artificial Intelligence, Web Development,
+                        Robotics, etc.</li>
+                </ul>
+
+                Some of the most popular frameworks and libraries used in Python include:
+
+                <ul>NumPy: A library for working with arrays and matrices.
+
+                    <li> Pandas: A library for data manipulation and analysis.</li>
+
+                    <li>Matplotlib: A library for creating data visualizations.</li>
+
+                    <li>TensorFlow: A library for machine learning and deep learning.</li>
+
+                    <li>Django: A web framework for building web applications.</li>
+
+                    <li>Flask: A micro web framework for building web applications.</li>
+
+                    <li> Pygame: A library for game development.</li>
+                </ul>
+
+                Overall, Python is a powerful and versatile language that can be used for a wide range of applications.
+                Whether you're a beginner or an experienced programmer, it's worth learning Python if you're interested
+                in general-purpose programming, data analysis, machine learning, or web development.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tab Contents (2)-->
+    <section id="tab-2" class="tabcontent">
+        <div class="left">
+            <ul class="left-navgroup">
+                <li><button id="tabv-11" class="tabv" onclick="QuizContent(event,'2','11','quiz11.html')">Quiz 1
+                        Basics</button></li>
+                <li><button id="tabv-22" class="tabv" onclick="QuizContent(event,'2','22','quiz22.html')">Quiz 2
+                        Variables</button></li>
+                <li><button id="tabv-33" class="tabv">Quiz 3</button></li>
+                <li><button id="tabv-44" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-55" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+                <li><button id="tabv-4" class="tabv">Quiz 4</button></li>
+            </ul>
+        </div>
+        <div id="right-2" class="right">
+            <div id="description-2">
+                <h2>Java Sripts</h2>
+                <p> JavaScript is a high-level, dynamic, and interpreted programming language that is mainly used for
+                    creating interactive and dynamic web pages. It is often used in conjunction with HTML and CSS to
+                    create web applications that can run on both the client-side (in the user's web browser) and the
+                    server-side (using platforms like Node.js). JavaScript was first introduced in the mid-1990s and has
+                    since become one of the most popular programming languages in the world.
+
+                    One of the main advantages of JavaScript is its flexibility. It can be used for a wide range of
+                    tasks, from simple web page animations to complex web applications. JavaScript code can be embedded
+                    directly into HTML pages, making it easy to create interactive elements like buttons, forms, and
+                    pop-up windows. It also supports creating custom objects and classes, which makes it an
+                    object-oriented programming language.
+
+                    JavaScript runs on a wide range of devices and platforms, from desktop computers to mobile devices.
+                    It is supported by all major web browsers, including Chrome, Firefox, Safari, and Edge.
+                    Additionally, many modern JavaScript frameworks and libraries like React, Angular, and Vue.js have
+                    become very popular and are widely used for building complex web applications.
+
+                    Overall, JavaScript is a powerful and versatile programming language that has become an essential
+                    tool for web developers. Whether you're creating a simple website or a complex web application,
+                    JavaScript is a key technology to know.</p>
+                <ul>
+                    <li>
+                        Object-oriented programming: JavaScript is an object-oriented programming language that allows
+                        developers to create custom objects and classes.
+                    </li>
+                    <li>
+                        Dynamic typing: JavaScript is a dynamically typed language, which means that variables can hold
+                        different types of data without the need for explicit type declarations.
+                    </li>
+                    <li>
+                        Interactivity: JavaScript enables developers to create interactive web pages that respond to
+                        user actions like button clicks and mouse movements.
+                    </li>
+                    <li>
+                        Asynchronous programming: JavaScript supports asynchronous programming, which allows developers
+                        to write non-blocking code that runs in the background while other code continues to execute.
+                    </li>
+                    <li>
+                        Functions as first-class citizens: In JavaScript, functions are treated as first-class citizens,
+                        meaning they can be passed around as values and stored in variables just like any other data
+                        type.
+                    </li>
+                    <li>
+                        Prototyping: JavaScript uses prototype-based inheritance, which allows objects to inherit
+                        properties and methods from other objects.
+                    </li>
+                    <li>
+                        Cross-platform compatibility: JavaScript code can run on a wide range of platforms, including
+                        desktop and mobile devices, as well as different web browsers.
+                    </li>
+                    <li>
+                        DOM manipulation: JavaScript allows developers to manipulate the Document Object Model (DOM),
+                        which is the interface between HTML and CSS and the web browser.
+                    </li>
+                    <li>
+                        Event-driven programming: JavaScript is event-driven, which means that it executes code in
+                        response to events triggered by user interactions or other external factors.
+                    </li>
+                    <li>
+                        Rich library and framework ecosystem: JavaScript has a vast ecosystem of libraries and
+                        frameworks, such as React, Angular, and Vue.js, which provide developers with pre-built
+                        functionality for common tasks and make it easier to build complex web applications.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Tab Contents (3)-->
+    <section id="tab-3" class="tabcontent">
+        <div class="left">
+            <ul class="left-navgroup">
+                <li><button id="tabv-111" class="tabv" onclick="QuizContent(event,'3','111','newquiz.html')">Quiz
+                        1</button></li>
+                <li><button id="tabv-222" class="tabv" onclick="QuizContent(event,'3','222','quiz4.html')">Quiz
+                        2</button></li>
+            </ul>
+        </div>
+        <div id="right-3" class="right">
+            <div id="description-3">
+                <h2>Topic 3</h2>
+            </div>
+        </div>
+    </section>
+    <!-- Tab Contents (4)-->
+    <section id="tab-4" class="tabcontent">
+        <div class="left">
+            <li>Fourth</li>
+            <li>Fourth</li>
+        </div>
+        <div id="right-4" class="right">
+            <div id="description-4">
+                <h2>Topic 4</h2>
+            </div>
+        </div>
+    </section>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
